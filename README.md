@@ -1,36 +1,63 @@
-# TypeScript Example
+<h1>React Native Doctor Appointment</h1>
 
-<p>
-  <!-- iOS -->
-  <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  <!-- Android -->
-  <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  <!-- Web -->
-  <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-</p>
+This application is a doctor appointment app. It is built using React Native and Firebase. It is a simple app that allows users to book appointments with doctors. It also allows doctors to view their appointments. 
 
-```sh
-npx create-react-native-app -t with-typescript
+<h1><b>Design</b></h1>
+
+The app's design is inspired by the [Figma](https://www.figma.com/community/file/955249997092817311) design by [Arotec Digital](https://www.figma.com/@arotecdigital).
+
+<h1>Features</h1>
+
+
+<h1>Installation</h1>
+
+To run this project, you need to have [Node.js](https://nodejs.org/en/) installed on your computer. You also need to have [Expo](https://expo.io/) installed on your computer.
+
+To install Expo, run the following command in your terminal:
+
+```
+npm install --global expo-cli
 ```
 
-TypeScript is a superset of JavaScript which gives you static types and powerful tooling in Visual Studio Code including autocompletion and useful inline warnings for type errors.
+<h1>Usage</h1>
 
-## 🚀 How to use
+To run this project, clone this repository and run the following commands in your terminal:
 
-#### Creating a new project
+```
+cd react-native-doctor-appointment
+npm install
+expo start
+```
 
-- Install the CLI: `npm i -g expo-cli`
-- Create a project: `npx create-react-native-app -t with-typescript`
-- `cd` into the project
+<h1>Contributing</h1>
 
-### Adding TypeScript to existing projects
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
 
-- Create a blank TypeScript config: `touch tsconfig.json`
-- Run `yarn start` or `npm run start` to automatically configure TypeScript
-- Rename files to TypeScript, `.tsx` for React components and `.ts` for plain typescript files
 
-> 💡 You can disable the TypeScript setup in Expo CLI with the environment variable `EXPO_NO_TYPESCRIPT_SETUP=1 expo start`
+<h1>Used Technologies</h1>
 
-## 📝 Notes
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.io/)
+- [NativeWind](https://www.nativewind.dev/)
+- [React Navigation](https://reactnavigation.org/)
+- [Redux](https://redux.js.org/)
 
-- [Expo TypeScript guide](https://docs.expo.dev/versions/latest/guides/typescript/)
+<h2> NativeWind </h2>
+
+NativeWind is a React Native UI library that is built using Tailwind CSS. It is a great library that allows you to build beautiful UIs using Tailwind CSS.
+
+<h2> How To Install NativeWind </h2>
+
+To install NativeWind, run the following command in your terminal:
+
+```
+yarn add nativewind
+yarn add --dev tailwindcss
+```
+
+You can check out the [NativeWind for Expo](https://www.nativewind.dev/quick-starts/expo) to learn more about how to use NativeWind.
+
+<h1>License</h1>
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
