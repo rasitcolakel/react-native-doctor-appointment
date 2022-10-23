@@ -3,7 +3,7 @@ import React from "react";
 
 type ButtonProps = TouchableOpacityProps & {
   text?: string;
-  variant?: "primary" | "secondary" | "danger" | "warning" | "success";
+  variant?: "primary" | "secondary" | "danger" | "warning" | "success" | "info";
   children?: React.ReactNode;
   outline?: boolean;
   size?: "xs" | "sm" | "md" | "lg";
@@ -16,16 +16,16 @@ type ButtonProps = TouchableOpacityProps & {
 const Button = (props: ButtonProps) => {
   const colors = {
     primary: {
-      bg: "bg-blue-500",
+      bg: "bg-primary",
       text: "text-white",
-      textOutline: "text-blue-500",
-      border: "border-blue-500",
+      textOutline: "text-primary-500",
+      border: "border-primary-500",
     },
     secondary: {
-      bg: "bg-blue-200",
-      text: "text-blue-500",
-      textOutline: "text-blue-500",
-      border: "border-blue-200",
+      bg: "bg-primary-200",
+      text: "text-primary-500",
+      textOutline: "text-primary-500",
+      border: "border-primary-200",
     },
     danger: {
       bg: "bg-red-500",
@@ -44,6 +44,12 @@ const Button = (props: ButtonProps) => {
       text: "text-white",
       textOutline: "text-green-500",
       border: "border-green-500",
+    },
+    info: {
+      bg: "bg-blue-500",
+      text: "text-white",
+      textOutline: "text-blue-500",
+      border: "border-blue-500",
     },
   };
 
