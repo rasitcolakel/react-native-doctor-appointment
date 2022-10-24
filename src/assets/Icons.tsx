@@ -45,4 +45,30 @@ function GoBackIcon(props: IconProps) {
   );
 }
 
-export { PhoneIcon, VideoCallIcon, GoBackIcon };
+function CalendarIcon(props: IconProps) {
+  return (
+    <Svg width={20} height={22} viewBox="0 0 20 22" fill="none" {...props}>
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M4.4 15.4c0-.605.495-1.1 1.1-1.1.605 0 1.1.495 1.1 1.1 0 .605-.495 1.1-1.1 1.1-.605 0-1.1-.495-1.1-1.1zm5.5-1.1h4.4c.605 0 1.1.495 1.1 1.1 0 .605-.495 1.1-1.1 1.1H9.9c-.605 0-1.1-.495-1.1-1.1 0-.605.495-1.1 1.1-1.1zm6.6 5.5H3.3c-.606 0-1.1-.494-1.1-1.1v-6.6h15.4v6.6c0 .606-.494 1.1-1.1 1.1zM3.3 4.4h1.1v1.1c0 .605.495 1.1 1.1 1.1.605 0 1.1-.495 1.1-1.1V4.4h6.6v1.1c0 .605.495 1.1 1.1 1.1.605 0 1.1-.495 1.1-1.1V4.4h1.1c.606 0 1.1.494 1.1 1.1v4.4H2.2V5.5c0-.606.494-1.1 1.1-1.1zm13.2-2.2h-1.1V1.1c0-.605-.495-1.1-1.1-1.1-.605 0-1.1.495-1.1 1.1v1.1H6.6V1.1C6.6.495 6.105 0 5.5 0c-.605 0-1.1.495-1.1 1.1v1.1H3.3C1.48 2.2 0 3.68 0 5.5v13.2C0 20.52 1.48 22 3.3 22h13.2c1.82 0 3.3-1.48 3.3-3.3V5.5c0-1.82-1.48-3.3-3.3-3.3z"
+        fill={colors.black}
+      />
+    </Svg>
+  );
+}
+
+function MoreIcon(props: IconProps) {
+  return (
+    <Svg width={4} height={18} viewBox="0 0 4 18" fill="none" {...props}>
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M2 4a2 2 0 10-.001-4.001A2 2 0 002 4zm0 3a2 2 0 10.001 4.001A2 2 0 002 7zm-2 9a2 2 0 114.001.001A2 2 0 010 16z"
+        fill={colors.black}
+      />
+    </Svg>
+  );
+}
+
+export { PhoneIcon, VideoCallIcon, GoBackIcon, CalendarIcon, MoreIcon };
