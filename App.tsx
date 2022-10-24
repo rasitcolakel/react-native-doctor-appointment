@@ -1,10 +1,24 @@
-import { Text, View } from "react-native";
-import Button from "./src/components/Button";
+// In App.js in a new project
 
-export default function App() {
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeScreen from "./src/screens/HomeScreen";
+
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-blue-0 gap-2">
-      <Text>Hello World!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
+export default App;
