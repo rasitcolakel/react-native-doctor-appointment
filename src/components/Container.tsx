@@ -6,8 +6,12 @@ type Props = ViewProps & {};
 
 const Container = (props: Props) => {
   return (
-    <SafeAreaView>
-      <View className="flex px-4">{props.children}</View>
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}
+    >
+      <View className="flex px-4 flex-1">{props.children}</View>
     </SafeAreaView>
   );
 };

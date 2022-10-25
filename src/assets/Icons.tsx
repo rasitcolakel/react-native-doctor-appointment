@@ -1,5 +1,5 @@
 import * as React from "react";
-import Svg, { Path } from "react-native-svg";
+import Svg, { Path, G, Defs } from "react-native-svg";
 import colors from "tailwindcss/colors";
 
 type IconProps = React.ComponentProps<typeof Svg> & {
@@ -47,7 +47,7 @@ function GoBackIcon(props: IconProps) {
 
 function CalendarIcon(props: IconProps) {
   return (
-    <Svg width={20} height={22} viewBox="0 0 20 22" fill="none" {...props}>
+    <Svg width={16} height={14} viewBox="0 0 20 22" fill="none" {...props}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
