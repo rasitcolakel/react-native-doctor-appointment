@@ -34,6 +34,15 @@ expo start
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change
 
 
+<h2> Features </h2>
+
+- [✅] Home Screen
+- [✅] Dark Mode Added
+- [❌] Doctors Screen
+- [❌] Doctor Profile Screen
+- [❌] Doctor Appointment Screen
+- [❌] Chatting Screen
+
 <h1>Used Technologies</h1>
 
 - [React Native](https://reactnative.dev/)
@@ -41,6 +50,8 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 - [NativeWind](https://www.nativewind.dev/)
 - [React Navigation](https://reactnavigation.org/)
 - [Redux](https://redux.js.org/)
+- [React Native SVG](https://github.com/software-mansion/react-native-svg)
+- [React Native SVG Transformer](https://github.com/kristerkari/react-native-svg-transformer)
 
 <h2> NativeWind </h2>
 
@@ -56,6 +67,65 @@ yarn add --dev tailwindcss
 ```
 
 You can check out the [NativeWind for Expo](https://www.nativewind.dev/quick-starts/expo) to learn more about how to use NativeWind.
+
+<h2> React Native SVG </h2>
+
+React Native SVG is a library that allows you to use SVGs in React Native. It is a great library that allows you to use SVGs in React Native.
+
+<h2> How To Install React Native SVG </h2>
+
+To install React Native SVG, run the following command in your terminal:
+
+```
+expo install react-native-svg
+```
+
+<h2> React Native SVG Transformer </h2>
+
+React Native SVG Transformer is a library that allows you to import SVGs in React Native.
+
+<h2> How To Install React Native SVG Transformer </h2>
+
+To install React Native SVG Transformer, run the following command in your terminal:
+
+```
+yarn add --dev react-native-svg-transformer
+```
+
+<h2> How To Use React Native SVG Transformer </h2>
+
+To use React Native SVG Transformer, add the following code to your `metro.config.js` file:
+
+```js
+const { getDefaultConfig } = require("expo/metro-config");
+
+module.exports = (() => {
+  const config = getDefaultConfig(__dirname);
+
+  const { transformer, resolver } = config;
+
+  config.transformer = {
+    ...transformer,
+    babelTransformerPath: require.resolve("react-native-svg-transformer"),
+  };
+  config.resolver = {
+    ...resolver,
+    assetExts: resolver.assetExts.filter((ext) => ext !== "svg"),
+    sourceExts: [...resolver.sourceExts, "svg"],
+  };
+
+  return config;
+})();
+```
+
+<h3>Example</h3> 
+
+```js
+    import { LogoComponent as Logo } from "./assets/logo.svg";
+
+    <Logo width={100} height={100} />
+```
+
 
 <h1>License</h1>
 
