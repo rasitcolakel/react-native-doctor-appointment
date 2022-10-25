@@ -1,4 +1,4 @@
-import { View, Text, ViewProps } from "react-native";
+import { View, Text, ViewProps, StatusBar } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -10,8 +10,10 @@ const Container = (props: Props) => {
       style={{
         flex: 1,
       }}
+      className="bg-white dark:bg-black android:py-2"
     >
-      <View className="flex px-4 flex-1">{props.children}</View>
+      <StatusBar barStyle="light-content" />
+      <View className="flex px-4 flex-1 dark:bg-black">{props.children}</View>
     </SafeAreaView>
   );
 };

@@ -15,6 +15,7 @@ import Neurology from "../assets/images/neurology.svg";
 import Genetics from "../assets/images/genetics.svg";
 import Dentistry from "../assets/images/dentistry.svg";
 import Surgery from "../assets/images/surgery.svg";
+import { useColorScheme } from "nativewind";
 
 const addCommaToCount = (count: number) => {
   return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -41,50 +42,27 @@ const specialties = [
     image: <Surgery />,
     doctorCount: 1316,
   },
-  // {
-  //   name: "Cardiology",
-  //   image: require("../assets/images/cardiology.png"),
-  // },
-
-  // {
-  //   name: "Dermatology",
-  //   image: require("../assets/images/dermatology.png"),
-  // },
-  // {
-  //   name: "Gastroenterology",
-  //   image: require("../assets/images/gastroenterology.png"),
-  // },
-  // {
-  //   name: "Ophthalmology",
-  //   image: require("../assets/images/ophthalmology.png"),
-  // },
-  // {
-  //   name: "Orthopedics",
-  //   image: require("../assets/images/orthopedics.png"),
-  // },
-  // {
-  //   name: "Pediatrics",
-  //   image: require("../assets/images/pediatrics.png"),
-  // },
 ];
 
 export default function HomeScreen() {
+  const { colorScheme, toggleColorScheme } = useColorScheme();
+  console.log(colorScheme);
   return (
     <Container>
       <View className="flex-row justify-between items-center">
-        <Text className="text-lg">Welcome, John</Text>
+        <Text className="text-lg text-primary-500">Welcome, John</Text>
         <View className="flex-row">
-          <IconButton classes="mr-1">
-            <CalendarIcon />
+          <IconButton classes="mr-1" onPress={toggleColorScheme}>
+            <CalendarIcon fill="fill-black dark:fill-white" />
           </IconButton>
           <IconButton outline={false}>
-            <MoreIcon />
+            <MoreIcon fill="fill-black dark:fill-white" />
           </IconButton>
         </View>
       </View>
 
       <View
-        className={`flex-col justify-between mt-4 bg-primary h-[450px] rounded-3xl px-3 shadow-md shadow-primary-500`}
+        className={`flex-col justify-between mt-4 bg-primary h-auto rounded-3xl px-3 shadow-md shadow-primary-500`}
       >
         <View className="justify-between p-4 w-3/4">
           <Text className="text-white font-bold text-4xl mb-4">
@@ -104,19 +82,27 @@ export default function HomeScreen() {
           />
         </View>
       </View>
-      <View className="bg-gray-200 my-4 flex flex-row justify-between items-center rounded-xl p-4 px-3">
+      <View className="bg-gray-200 my-6 flex flex-row justify-between items-center rounded-xl p-4 px-3 dark:bg-slate-900">
         <View className="flex-col">
-          <Text className="font-bold mb-1 text-lg">STI Problems?</Text>
-          <Text className="font-light text-gray-900">
+          <Text className="font-bold mb-1 text-lg my-class dark:text-white">
+            STI Problems?
+          </Text>
+          <Text className="font-light text-gray-500">
             Find suitable specialists here
           </Text>
         </View>
         <IconButton classes="mr-1 bg-white p-0 border-0">
-          <Ionicons name="arrow-forward" size={24} color="black" />
+          <Ionicons
+            name="arrow-forward"
+            size={24}
+            color={colorScheme === "dark" ? "white" : "black"}
+          />
         </IconButton>
       </View>
       <View className="flex flex-1">
-        <Text className="font-bold text-lg mb-2">Specialty 😷</Text>
+        <Text className="font-bold text-lg mb-4 text-primary-500">
+          Specialty 😷
+        </Text>
         <FlatList
           style={{
             flex: 1,
@@ -125,12 +111,14 @@ export default function HomeScreen() {
           renderItem={({ item }) => (
             <View
               key={item.name}
-              className="flex-col items-center justify-center bg-gray-200 w-36 rounded-xl "
+              className="flex-col items-center justify-center bg-gray-200 w-36 rounded-xl dark:bg-slate-900"
             >
               {item.image}
               <View className="pt-2 items-center">
-                <Text className="text-lg mb-1">{item.name}</Text>
-                <Text className="text-gray-700">
+                <Text className="text-lg mb-1 dark:text-white">
+                  {item.name}
+                </Text>
+                <Text className="text-gray-700 dark:text-gray-500">
                   {addCommaToCount(item.doctorCount)} Doctors
                 </Text>
               </View>
