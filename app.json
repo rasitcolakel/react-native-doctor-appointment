@@ -2,6 +2,9 @@
     "expo": {
         "android": {
             "package": "com.reactnative.appointment"
+        },
+        "ios": {
+            "bundleIdentifier": "com.reactnative.appointment"
         }
     }
 }
