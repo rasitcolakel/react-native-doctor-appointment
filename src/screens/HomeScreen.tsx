@@ -1,14 +1,5 @@
-import { Ionicons } from "@expo/vector-icons";
-import { FlashList } from "@shopify/flash-list";
-import { View, Text, Dimensions, Image, FlatList } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  CalendarIcon,
-  GoBackIcon,
-  MoreIcon,
-  PhoneIcon,
-  VideoCallIcon,
-} from "../assets/Icons";
+import { View, Text, Image, FlatList } from "react-native";
+import { CalendarIcon, GoForwardIcon, MoreIcon } from "../assets/Icons";
 import Container from "../components/Container";
 import IconButton from "../components/IconButton";
 import Neurology from "../assets/images/neurology.svg";
@@ -16,6 +7,8 @@ import Genetics from "../assets/images/genetics.svg";
 import Dentistry from "../assets/images/dentistry.svg";
 import Surgery from "../assets/images/surgery.svg";
 import { useColorScheme } from "nativewind";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { AppStackParamsList } from "../../App";
 
 const addCommaToCount = (count: number) => {
   return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -44,9 +37,11 @@ const specialties = [
   },
 ];
 
-export default function HomeScreen() {
+type Props = NativeStackScreenProps<AppStackParamsList, "Home">;
+
+export default function HomeScreen({ navigation }: Props) {
   const { colorScheme, toggleColorScheme } = useColorScheme();
-  console.log(colorScheme);
+
   return (
     <Container>
       <View className="flex-row justify-between items-center">
@@ -91,12 +86,11 @@ export default function HomeScreen() {
             Find suitable specialists here
           </Text>
         </View>
-        <IconButton classes="mr-1 bg-white p-0 border-0">
-          <Ionicons
-            name="arrow-forward"
-            size={24}
-            color={colorScheme === "dark" ? "white" : "black"}
-          />
+        <IconButton
+          classes="mr-1 bg-white border-0"
+          onPress={() => navigation.push("Doctors")}
+        >
+          <GoForwardIcon fill="fill-black dark:fill-white" />
         </IconButton>
       </View>
       <View className="flex flex-1">

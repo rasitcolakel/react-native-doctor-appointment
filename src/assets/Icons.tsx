@@ -49,6 +49,19 @@ function GoBackIcon(props: IconProps) {
   );
 }
 
+function GoForwardIcon(props: IconProps) {
+  return (
+    <Svg width={16} height={14} viewBox="0 0 16 14" fill="none" {...props}>
+      <StyledPath
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M1 6h11.865L9.232 1.64A1 1 0 1110.768.36l5 6c.039.047.059.102.088.154.024.042.053.078.071.124a.985.985 0 01.072.358L16 7l-.001.004a.985.985 0 01-.072.358c-.018.046-.047.082-.071.124-.029.052-.049.107-.088.154l-5 6a.999.999 0 11-1.536-1.28L12.865 8H1a1 1 0 010-2z"
+        fill={props.fill || "black"}
+      />
+    </Svg>
+  );
+}
+
 function CalendarIcon(props: IconProps) {
   return (
     <Svg width={16} height={14} viewBox="0 0 20 22" fill="none" {...props}>
@@ -75,4 +88,39 @@ function MoreIcon(props: IconProps) {
   );
 }
 
-export { PhoneIcon, VideoCallIcon, GoBackIcon, CalendarIcon, MoreIcon };
+function FilterIcon(props: IconProps) {
+  return (
+    <Svg width={23} height={20} viewBox="0 0 23 20" fill="none" {...props}>
+      <StyledPath
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M18.5 10a1.1 1.1 0 112.2 0 1.1 1.1 0 01-2.2 0zm1.1 3.3c1.82 0 3.3-1.48 3.3-3.3 0-1.82-1.48-3.3-3.3-3.3a3.294 3.294 0 00-3.097 2.2H2a1.099 1.099 0 100 2.2h14.503a3.294 3.294 0 003.097 2.2zM5.3 3.4a1.1 1.1 0 112.2 0 1.1 1.1 0 01-2.2 0zm4.196 1.1H21.8a1.099 1.099 0 100-2.2H9.496A3.294 3.294 0 006.4.1a3.294 3.294 0 00-3.097 2.2H2a1.099 1.099 0 100 2.2h1.303A3.294 3.294 0 006.4 6.7a3.294 3.294 0 003.096-2.2zM9.7 16.6a1.1 1.1 0 112.2 0 1.1 1.1 0 01-2.2 0zm1.1 3.3a3.294 3.294 0 003.096-2.2H21.8a1.099 1.099 0 100-2.2h-7.904a3.294 3.294 0 00-3.096-2.2 3.294 3.294 0 00-3.097 2.2H2a1.099 1.099 0 100 2.2h5.703a3.294 3.294 0 003.097 2.2z"
+        fill={props.fill || "black"}
+      />
+    </Svg>
+  );
+}
+
+function SearchIcon(props: IconProps) {
+  return (
+    <Svg width={18} height={18} viewBox="0 0 18 18" fill="none" {...props}>
+      <StyledPath
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M2 8c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6m15.707 8.293l-3.395-3.396A7.952 7.952 0 0016 8c0-4.411-3.589-8-8-8S0 3.589 0 8s3.589 8 8 8a7.952 7.952 0 004.897-1.688l3.396 3.395a.997.997 0 001.414 0 .999.999 0 000-1.414"
+        fill={props.fill || "black"}
+      />
+    </Svg>
+  );
+}
+
+export {
+  PhoneIcon,
+  VideoCallIcon,
+  GoBackIcon,
+  CalendarIcon,
+  MoreIcon,
+  GoForwardIcon,
+  FilterIcon,
+  SearchIcon,
+};
