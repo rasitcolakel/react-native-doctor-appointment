@@ -1,21 +1,52 @@
-import { View, Text, ViewProps, StatusBar } from "react-native";
+import {
+  View,
+  ViewProps,
+  StatusBar,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+  SafeAreaView,
+} from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import useColorModeValue from "../assets/hooks/useColorModeValue";
 
-type Props = ViewProps & {};
+type Props = ViewProps & {
+  keyboardAvoiding?: boolean;
+};
 
 const Container = (props: Props) => {
-  return (
+  const { children, keyboardAvoiding, ...rest } = props;
+
+  const innerComponent = (
     <SafeAreaView
       style={{
         flex: 1,
       }}
       className="bg-white dark:bg-black android:py-2"
     >
-      <StatusBar barStyle="light-content" />
+      <StatusBar
+        backgroundColor={useColorModeValue("#fff", "#000")}
+        barStyle={useColorModeValue("dark-content", "light-content") as any}
+      />
       <View className="flex px-4 flex-1 dark:bg-black">{props.children}</View>
     </SafeAreaView>
   );
+
+  if (keyboardAvoiding) {
+    return (
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1 }}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          {innerComponent}
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
+    );
+  }
+
+  return innerComponent;
 };
 
 export default Container;
