@@ -4,7 +4,7 @@ This application is a doctor appointment app. It is built using React Native and
 
 <h1><b>Design</b></h1>
 
-The app's design is inspired by the [Figma](https://www.figma.com/community/file/955249997092817311) design by [Arotec Digital](https://www.figma.com/@arotecdigital).
+The app's design is inspired by the [Figma](https://www.figma.com/community/file/955249997092817311) designed by [Arotec Digital](https://www.figma.com/@arotecdigital).
 
 <h1>Features</h1>
 

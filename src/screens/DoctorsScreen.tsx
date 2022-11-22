@@ -7,12 +7,15 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { AppStackParamsList } from "../../App";
 import { FilterIcon, GoBackIcon } from "../assets/Icons";
 import DoctorSearchInput from "../components/DoctorSearchInput";
+import { FlashList } from "@shopify/flash-list";
+import { generateDoctors } from "../utils/generator";
+import DoctorCard from "../components/DoctorCard";
 
 type Props = NativeStackScreenProps<AppStackParamsList, "Doctors">;
-
+const data = generateDoctors(1000);
 const DoctorsScreen = ({ navigation }: Props) => {
   return (
-    <Container keyboardAvoiding>
+    <Container>
       <View className="flex flex-row items-center">
         <IconButton classes="bg-white p-0" onPress={() => navigation.goBack()}>
           <GoBackIcon fill="fill-black dark:fill-white" />
@@ -25,6 +28,16 @@ const DoctorsScreen = ({ navigation }: Props) => {
         </IconButton>
       </View>
       <DoctorSearchInput />
+      <FlashList
+        data={data}
+        renderItem={({ item, index }) => (
+          <DoctorCard {...item} isLeft={index % 2 == 0} />
+        )}
+        estimatedItemSize={200}
+        numColumns={2}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+      />
     </Container>
   );
 };
