@@ -8,12 +8,16 @@ import { AppStackParamsList } from "../../App";
 import { FilterIcon, GoBackIcon } from "../assets/Icons";
 import DoctorSearchInput from "../components/DoctorSearchInput";
 import { FlashList } from "@shopify/flash-list";
-import { generateDoctors } from "../utils/generator";
+import { DoctorCardType, generateDoctors } from "../utils/generator";
 import DoctorCard from "../components/DoctorCard";
 
 type Props = NativeStackScreenProps<AppStackParamsList, "Doctors">;
 const data = generateDoctors(1000);
 const DoctorsScreen = ({ navigation }: Props) => {
+  const goToDoctorDetail = (doctor: DoctorCardType) => {
+    navigation.navigate("DoctorDetail", { doctor });
+  };
+
   return (
     <Container>
       <View className="flex flex-row items-center">
@@ -31,7 +35,11 @@ const DoctorsScreen = ({ navigation }: Props) => {
       <FlashList
         data={data}
         renderItem={({ item, index }) => (
-          <DoctorCard {...item} isLeft={index % 2 == 0} />
+          <DoctorCard
+            {...item}
+            isLeft={index % 2 == 0}
+            onPress={() => goToDoctorDetail(item)}
+          />
         )}
         estimatedItemSize={200}
         numColumns={2}

@@ -50,7 +50,7 @@ export const generateDoctors = (length: number): DoctorCardType[] => {
       specialty: capitalizeFirstLetter(faker.helpers.arrayElement(specialties)),
       reviews: faker.random.numeric(3),
       rating: ((Number(faker.random.numeric(5)) / 6) % 5).toFixed(2).toString(),
-      online: faker.random.numeric(1) === "1",
+      online: faker.helpers.arrayElement([true, true, false]),
     };
   });
 };

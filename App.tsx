@@ -6,12 +6,17 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./src/screens/HomeScreen";
 import { LogBox } from "react-native";
 import DoctorsScreen from "./src/screens/DoctorsScreen";
+import { DoctorCardType } from "./src/utils/generator";
+import DoctorDetailScreen from "./src/screens/DoctorDetailScreen";
 
 LogBox.ignoreLogs(["is not a valid color"]);
 
 export type AppStackParamsList = {
   Home: undefined;
   Doctors: undefined;
+  DoctorDetail: {
+    doctor: DoctorCardType;
+  };
 };
 
 const Stack = createNativeStackNavigator<AppStackParamsList>();
@@ -26,6 +31,7 @@ function App() {
       >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Doctors" component={DoctorsScreen} />
+        <Stack.Screen name="DoctorDetail" component={DoctorDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

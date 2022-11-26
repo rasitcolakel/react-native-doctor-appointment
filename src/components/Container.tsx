@@ -23,7 +23,7 @@ const Container = (props: Props) => {
       style={{
         flex: 1,
       }}
-      className="bg-slate-100 dark:bg-black android:py-2"
+      className="bg-white dark:bg-black android:py-2"
     >
       <StatusBar
         backgroundColor={useColorModeValue("#fff", "#000")}
