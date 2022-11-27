@@ -13,11 +13,12 @@ import useColorModeValue from "../assets/hooks/useColorModeValue";
 
 type Props = ViewProps & {
   keyboardAvoiding?: boolean;
+  noPadding?: boolean;
 };
 
 const Container = (props: Props) => {
   const { children, keyboardAvoiding, ...rest } = props;
-
+  const padding = props.noPadding ? "" : "px-4";
   const innerComponent = (
     <SafeAreaView
       style={{
@@ -29,7 +30,9 @@ const Container = (props: Props) => {
         backgroundColor={useColorModeValue("#fff", "#000")}
         barStyle={useColorModeValue("dark-content", "light-content") as any}
       />
-      <View className="flex px-4 flex-1 dark:bg-black">{props.children}</View>
+      <View className={`flex ${padding} flex-1 dark:bg-black`}>
+        {props.children}
+      </View>
     </SafeAreaView>
   );
 

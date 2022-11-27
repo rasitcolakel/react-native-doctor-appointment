@@ -8,6 +8,7 @@ import { LogBox } from "react-native";
 import DoctorsScreen from "./src/screens/DoctorsScreen";
 import { DoctorCardType } from "./src/utils/generator";
 import DoctorDetailScreen from "./src/screens/DoctorDetailScreen";
+import NewAppointment from "./src/screens/NewAppointment";
 
 LogBox.ignoreLogs(["is not a valid color"]);
 
@@ -15,6 +16,9 @@ export type AppStackParamsList = {
   Home: undefined;
   Doctors: undefined;
   DoctorDetail: {
+    doctor: DoctorCardType;
+  };
+  NewAppointment: {
     doctor: DoctorCardType;
   };
 };
@@ -32,6 +36,7 @@ function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Doctors" component={DoctorsScreen} />
         <Stack.Screen name="DoctorDetail" component={DoctorDetailScreen} />
+        <Stack.Screen name="NewAppointment" component={NewAppointment} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -31,6 +31,10 @@ const specialties = [
   "podiatrist",
   "psychiatrist",
   "radiologist",
+  "dentist",
+  "geneticist",
+  "neurologist",
+  "surgeon",
 ];
 
 function capitalizeFirstLetter(str: string) {
