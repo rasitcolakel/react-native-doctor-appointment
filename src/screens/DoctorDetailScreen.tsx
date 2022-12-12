@@ -125,7 +125,12 @@ const DoctorDetailScreen = ({ navigation, route }: Props) => {
               <Button
                 text={"Book Appointment"}
                 className="rounded-2xl p-4 mt-6"
-              ></Button>
+                onPress={() =>
+                  navigation.push("NewAppointment", {
+                    doctor: route.params.doctor,
+                  })
+                }
+              />
             </View>
           </View>
         </View>

@@ -32,6 +32,7 @@ function App() {
         screenOptions={{
           headerShown: false,
         }}
+        initialRouteName="NewAppointment"
       >
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Doctors" component={DoctorsScreen} />

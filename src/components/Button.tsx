@@ -3,7 +3,14 @@ import React from "react";
 
 type ButtonProps = TouchableOpacityProps & {
   text?: string;
-  variant?: "primary" | "secondary" | "danger" | "warning" | "success" | "info";
+  variant?:
+    | "primary"
+    | "secondary"
+    | "danger"
+    | "warning"
+    | "success"
+    | "info"
+    | "link";
   children?: React.ReactNode;
   outline?: boolean;
   size?: "xs" | "sm" | "md" | "lg";
@@ -50,6 +57,12 @@ const Button = (props: ButtonProps) => {
       text: "text-white",
       textOutline: "text-blue-500",
       border: "border-blue-500",
+    },
+    link: {
+      bg: "bg-transparent",
+      text: "text-primary-500",
+      textOutline: "text-primary-500",
+      border: "border-transparent",
     },
   };
 
